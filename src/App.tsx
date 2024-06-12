@@ -5,7 +5,8 @@ export default function App() {
 	return (
 		<div
 			id="app-container"
-			className="w-full min-h-screen relative text-xl font-primary"
+			className="w-full min-h-screen relative text-xl font-primary flex flex-col
+			justify-center items-center"
 		>
 			<Backdrop />
 			<HomePage />
