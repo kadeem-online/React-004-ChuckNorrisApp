@@ -6,8 +6,8 @@ export default function HomePage({ className }: HomePageParameters) {
 	return (
 		<main className={className || ``}>
 			<section id="display-section" className="py-10">
-				<div className="container mx-auto flex flex-col gap-5 items-center">
-					<h1 className="font-semibold text-slate-100 text-5xl">
+				<div className="container px-5 mx-auto flex flex-col gap-5 items-center">
+					<h1 className="font-semibold text-slate-100 text-3xl lg:text-5xl text-center">
 						Chuck Norris Jokes
 					</h1>
 
