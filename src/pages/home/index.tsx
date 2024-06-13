@@ -1,3 +1,5 @@
+import JokeDisplay from "./components/JokeDisplay";
+
 interface HomePageParameters {
 	className?: string;
 }
@@ -12,16 +14,7 @@ export default function HomePage({ className }: HomePageParameters) {
 					</h1>
 
 					{/* joke display */}
-					<div
-						id="joke-display"
-						className="max-w-lg p-4 bg-slate-200/85 rounded-xl border-2 border-slate-400"
-					>
-						<p className="text-slate-900 text-center">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Aspernatur iste veritatis nobis repellendus earum dicta suscipit
-							laborum mollitia?
-						</p>
-					</div>
+					<JokeDisplay />
 
 					{/* Actions */}
 					<div id="actions-panel" className="">
