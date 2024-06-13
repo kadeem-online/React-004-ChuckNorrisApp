@@ -42,7 +42,7 @@ export default function HomePage({ className }: props) {
 					</h1>
 
 					{/* joke display */}
-					<JokeDisplay />
+					<JokeDisplay query={jokeQuery} />
 
 					{/* Actions */}
 					<div id="actions-panel" className="">
