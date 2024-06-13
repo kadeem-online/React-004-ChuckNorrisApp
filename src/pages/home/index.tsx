@@ -1,10 +1,38 @@
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+
+// components
 import JokeDisplay from "./components/JokeDisplay";
 
 interface props {
 	className?: string;
 }
 
+function fetchJoke() {
+	const URL = `https://api.chucknorris.io/jokes/random`;
+
+	return axios.get(URL).then((response) => {
+		if (response.status === 200) {
+			return response.data;
+		}
+
+		throw new Error(`Error ${response.status}.`);
+	});
+}
+
 export default function HomePage({ className }: props) {
+	const jokeQuery = useQuery({
+		queryKey: ["chuckNorrisJoke"],
+		queryFn: fetchJoke,
+	});
+
+	/**
+	 * Handles events requesting a new joke.
+	 */
+	const jokeRefreshHandler = () => {
+		jokeQuery.refetch();
+	};
+
 	return (
 		<main className={className || ``}>
 			<section id="display-section" className="py-10">
@@ -22,6 +50,7 @@ export default function HomePage({ className }: props) {
 							data-refresh-action
 							className="bg-yellow-500 py-1 px-4 text-purple-950 rounded
 							hover:bg-yellow-300"
+							onClick={jokeRefreshHandler}
 						>
 							Refresh
 						</button>
