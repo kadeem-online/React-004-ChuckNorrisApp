@@ -1,10 +1,10 @@
 import JokeDisplay from "./components/JokeDisplay";
 
-interface HomePageParameters {
+interface props {
 	className?: string;
 }
 
-export default function HomePage({ className }: HomePageParameters) {
+export default function HomePage({ className }: props) {
 	return (
 		<main className={className || ``}>
 			<section id="display-section" className="py-10">
