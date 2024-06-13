@@ -2,6 +2,7 @@ import { UseQueryResult } from "@tanstack/react-query";
 import JokeContent from "./JokeContent";
 import JokeLoading from "./JokeLoading";
 import JokeError from "./JokeError";
+import useOnlineStatus from "../../../utils/hooks/useOnlineStatus";
 
 interface ChuckApiResponse {
 	categories?: Array<string>;
@@ -18,13 +19,18 @@ interface props {
 }
 
 export default function JokeDisplay({ query }: props) {
-	const content = query?.isFetching ? (
-		<JokeLoading />
-	) : query?.isError ? (
-		<JokeError />
-	) : (
-		<JokeContent text={query?.data?.value} />
-	);
+	const isOnline = useOnlineStatus();
+
+	const content =
+		isOnline == false ? (
+			<JokeError isOffline={true} />
+		) : query?.isFetching ? (
+			<JokeLoading />
+		) : query?.isError ? (
+			<JokeError />
+		) : (
+			<JokeContent text={query?.data?.value} />
+		);
 
 	return (
 		<div
