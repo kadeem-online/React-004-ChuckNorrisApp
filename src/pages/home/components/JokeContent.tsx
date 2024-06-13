@@ -3,5 +3,5 @@ interface props {
 }
 
 export default function JokeContent({ text }: props) {
-	return <p className="text-slate-900 text-center">{text}</p>;
+	return <p className="text-slate-900">{text}</p>;
 }

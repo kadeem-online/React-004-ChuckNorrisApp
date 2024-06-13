@@ -30,7 +30,7 @@ export default function JokeDisplay({ query }: props) {
 		<div
 			id="joke-display"
 			className="max-w-lg min-w-40 p-4 bg-slate-200/85 rounded-xl border-2 
-      border-slate-400"
+      border-slate-400 text-center"
 		>
 			{content}
 		</div>
