@@ -9,4 +9,4 @@ async codes without me needing to manage the state and fetch requests manually.
 
 ![Preview of chuck norris app](/public/images/screenshot-01.png)
 
-**Live Code Link:** [https://ko254-norris-jokes.netlify.app/](https://ko254-norris-jokes.netlify.app/)
+**Live Demo Link:** [https://kadeem-online.github.io/React-004-ChuckNorrisApp/](https://kadeem-online.github.io/React-004-ChuckNorrisApp/)
